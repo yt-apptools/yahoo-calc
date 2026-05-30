@@ -53,6 +53,7 @@ button {
     font-weight: bold;
 }
 
+/* iPhoneだけ大きくする */
 @media (max-width: 600px) {
     body {
         max-width: 100%;
@@ -88,4 +89,17 @@ button {
         font-size: 24px;
         text-align: center;
     }
+}
+.fee-check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 12px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.fee-check input[type="checkbox"] {
+    width: 28px;
+    height: 28px;
 }
