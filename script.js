@@ -10,9 +10,7 @@ function addItem() {
     `;
 
     document.getElementById("items").appendChild(row);
-
     row.querySelector(".item-price").focus();
-
     addEnterEvent();
 }
 
@@ -24,7 +22,6 @@ function removeItem(button) {
 function calc() {
     const prices = document.querySelectorAll(".item-price");
     const qtys = document.querySelectorAll(".item-qty");
-
     const shipping = Number(document.getElementById("shipping").value) || 0;
 
     let totalLimit = 0;
@@ -62,5 +59,9 @@ function addEnterEvent() {
         };
     });
 }
+
+document.addEventListener("input", function() {
+    calc();
+});
 
 addEnterEvent();
