@@ -10,8 +10,6 @@ function addItem() {
     `;
 
     document.getElementById("items").appendChild(row);
-    row.querySelector(".item-price").focus();
-    addEnterEvent();
 }
 
 function removeItem(button) {
@@ -48,20 +46,6 @@ function calc() {
     `;
 }
 
-function addEnterEvent() {
-    const inputs = document.querySelectorAll("input");
-
-    inputs.forEach(input => {
-        input.onkeydown = function(event) {
-            if (event.key === "Enter") {
-                calc();
-            }
-        };
-    });
-}
-
-document.addEventListener("input", function() {
+document.addEventListener("input", function () {
     calc();
 });
-
-addEnterEvent();
