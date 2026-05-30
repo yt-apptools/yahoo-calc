@@ -1,92 +1,65 @@
 body {
-    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: Arial, sans-serif;
     background: #f5f5f5;
-    margin: 0;
-    padding: 12px;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 20px;
 }
 
 h1 {
     text-align: center;
-    font-size: 32px;
-    margin-bottom: 20px;
 }
 
 .box {
     background: white;
-    padding: 16px;
-    border-radius: 16px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    padding: 20px;
+    border-radius: 12px;
 }
 
 .item-row {
     display: grid;
     grid-template-columns: 1fr 90px 70px;
-    gap: 8px;
-    margin-bottom: 12px;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
 input {
     width: 100%;
     box-sizing: border-box;
-    padding: 18px 12px;
-    font-size: 22px;
-    border: 2px solid #ddd;
-    border-radius: 12px;
-}
-
-input:focus {
-    outline: none;
-    border-color: #007aff;
+    padding: 12px;
+    font-size: 16px;
 }
 
 button {
-    border: none;
-    border-radius: 12px;
+    padding: 12px;
     cursor: pointer;
 }
 
-.item-row button {
-    font-size: 14px;
-}
-
-.add-btn {
+.add-btn,
+.calc-btn {
     width: 100%;
-    padding: 18px;
-    font-size: 22px;
-    font-weight: bold;
     margin-top: 10px;
-    margin-bottom: 15px;
 }
 
 .calc-btn {
-    width: 100%;
-    padding: 22px;
-    font-size: 28px;
+    font-size: 18px;
     font-weight: bold;
-    margin-top: 15px;
-}
-
-label {
-    display: block;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 8px;
 }
 
 #result {
     margin-top: 25px;
-    font-size: 28px;
+    font-size: 20px;
     line-height: 1.8;
     font-weight: bold;
-    text-align: center;
 }
 
-hr {
-    margin: 15px 0;
-}
-
-/* iPhone最適化 */
+/* iPhoneだけ大きくする */
 @media (max-width: 600px) {
+    body {
+        max-width: 100%;
+        margin: 0;
+        padding: 12px;
+    }
 
     h1 {
         font-size: 28px;
@@ -94,6 +67,7 @@ hr {
 
     .item-row {
         grid-template-columns: 1fr 80px 60px;
+        gap: 8px;
     }
 
     input {
@@ -103,21 +77,16 @@ hr {
 
     .add-btn {
         font-size: 20px;
+        padding: 16px;
     }
 
     .calc-btn {
-        font-size: 26px;
+        font-size: 24px;
+        padding: 18px;
     }
 
     #result {
         font-size: 24px;
+        text-align: center;
     }
-    #result {
-    font-size: 24px;
-}
-
-h1 {
-    font-size: 28px;
-}
-
 }
