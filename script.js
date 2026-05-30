@@ -10,6 +10,8 @@ function addItem() {
     `;
 
     document.getElementById("items").appendChild(row);
+    row.querySelector(".item-price").focus();
+    addEnterEvent();
 }
 
 function removeItem(button) {
@@ -33,7 +35,11 @@ function calc() {
         totalQty += qty;
     }
 
-    const maxBid = (totalLimit - shipping) / 1.1;
+    const noFee = document.getElementById("noFee").checked;
+
+const maxBid = noFee
+  ? (totalLimit - shipping)
+  : (totalLimit - shipping) / 1.1;
     const avgPrice = totalQty > 0 ? maxBid / totalQty : 0;
 
     document.getElementById("result").innerHTML = `
@@ -46,6 +52,20 @@ function calc() {
     `;
 }
 
-document.addEventListener("input", function () {
+function addEnterEvent() {
+    const inputs = document.querySelectorAll("input");
+
+    inputs.forEach(input => {
+        input.onkeydown = function(event) {
+            if (event.key === "Enter") {
+                calc();
+            }
+        };
+    });
+}
+
+document.addEventListener("input", function() {
     calc();
 });
+
+addEnterEvent();
